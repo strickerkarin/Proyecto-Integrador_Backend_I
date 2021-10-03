@@ -8,10 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.Locale;
 
-@Repository
+@Transactional
 public interface IPacienteRepository extends JpaRepository<Paciente, Integer > {
 
 

@@ -1,12 +1,11 @@
 package com.example.ProyectoIntegradorClinica.service.imp;
 
 import com.example.ProyectoIntegradorClinica.dto.OdontologoDto;
-import com.example.ProyectoIntegradorClinica.persistence.entities.Odontologo;
 import org.junit.Assert;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.Order;
 
 @SpringBootTest
 class OdontologoServiceTest {
@@ -26,33 +25,38 @@ class OdontologoServiceTest {
         odontologoCreado = odontologoService.crear(odontologo);
     }
 
+
     @Test
     void crear() {
-        odontologoCreado = odontologoService.crear(odontologo);
         Assert.assertTrue(odontologoCreado.getId() != null);
     }
 
-    /* @Test
+    @Test
     void buscar() {
-        //OdontologoDto odontologoEncontrado = odontologoService.buscar(1);
-        Assert.assertTrue(odontologoEncontrado) == "Lisandro");
-    } */
+        OdontologoDto odontologoEncontrado = odontologoService.buscar(1);
+        Assert.assertTrue(odontologoEncontrado.getNombre() == "Lisandro");
+    }
 
     @Test
+
     void actualizar() {
         odontologo.setNombre("Ezequiel");
         OdontologoDto odontologoActualizado = odontologoService.actualizar(odontologo);
         Assert.assertTrue(odontologoActualizado.getNombre() == "Ezequiel");
     }
 
+
+    @Test
+    void consultarTodos() {
+        Assert.assertTrue(odontologoService.consultarTodos().size() != 0);
+    }
+
+    @Order(4)
     @Test
     void eliminar() {
         odontologoService.eliminar(1);
         Assert.assertTrue(odontologoService.buscar(1) == null);
     }
 
-    @Test
-    void consultarTodos() {
-        Assert.assertTrue(odontologoService.consultarTodos().size() == 1);
-    }
+
 }
