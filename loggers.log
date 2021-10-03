@@ -376,3 +376,21 @@
 [2021-10-03 13:58:00] [DEBUG] [OdontologoController:32] No se encontrÃ³ el odontologo
 [2021-10-03 13:58:00] [DEBUG] [OdontologoController:48] Iniciando el mÃ©todo 'actualizar(odontologo)'
 [2021-10-03 13:58:00] [DEBUG] [OdontologoController:63] Iniciando el mÃ©todo 'eliminarPorId'
+[2021-10-03 19:37:19] [DEBUG] [OdontologoController:41] Iniciando el método 'crearNuevo (odontologo)'
+[2021-10-03 19:37:19] [DEBUG] [OdontologoController:27] Iniciando el método 'buscarPorId
+[2021-10-03 19:37:19] [DEBUG] [OdontologoController:27] Iniciando el método 'buscarPorId
+[2021-10-03 19:37:19] [DEBUG] [OdontologoController:32] No se encontró el odontologo
+[2021-10-03 19:37:19] [DEBUG] [OdontologoController:48] Iniciando el método 'actualizar(odontologo)'
+[2021-10-03 19:37:19] [DEBUG] [OdontologoController:63] Iniciando el método 'eliminarPorId'
+[2021-10-03 19:46:37] [DEBUG] [OdontologoController:41] Iniciando el método 'crearNuevo (odontologo)'
+[2021-10-03 19:46:37] [DEBUG] [OdontologoController:27] Iniciando el método 'buscarPorId
+[2021-10-03 19:46:37] [DEBUG] [OdontologoController:27] Iniciando el método 'buscarPorId
+[2021-10-03 19:46:37] [DEBUG] [OdontologoController:32] No se encontró el odontologo
+[2021-10-03 19:46:37] [DEBUG] [OdontologoController:48] Iniciando el método 'actualizar(odontologo)'
+[2021-10-03 19:46:37] [DEBUG] [OdontologoController:63] Iniciando el método 'eliminarPorId'
+[2021-10-03 19:47:13] [DEBUG] [OdontologoController:41] Iniciando el mÃ©todo 'crearNuevo (odontologo)'
+[2021-10-03 19:47:13] [DEBUG] [OdontologoController:27] Iniciando el mÃ©todo 'buscarPorId
+[2021-10-03 19:47:13] [DEBUG] [OdontologoController:27] Iniciando el mÃ©todo 'buscarPorId
+[2021-10-03 19:47:13] [DEBUG] [OdontologoController:32] No se encontrÃ³ el odontologo
+[2021-10-03 19:47:13] [DEBUG] [OdontologoController:48] Iniciando el mÃ©todo 'actualizar(odontologo)'
+[2021-10-03 19:47:13] [DEBUG] [OdontologoController:63] Iniciando el mÃ©todo 'eliminarPorId'
