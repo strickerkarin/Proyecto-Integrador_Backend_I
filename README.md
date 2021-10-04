@@ -9,5 +9,8 @@ password: digital
 Sólo este usuario ADMIN tiene acceso a todos los métodos;
 Un usuario del tipo "USER" sólo puede acceder a algunos métodos de turnos.
 
+Link a mi repositorio: 
+https://github.com/strickerkarin/Proyecto-Integrador_Backend_I
+
 
  
