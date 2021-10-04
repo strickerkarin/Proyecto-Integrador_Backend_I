@@ -6,10 +6,7 @@ import com.example.ProyectoIntegradorClinica.persistence.entities.Turno;
 import com.example.ProyectoIntegradorClinica.persistence.repository.ITurnoRepository;
 import com.example.ProyectoIntegradorClinica.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +14,6 @@ import java.util.List;
 
 @Service
 public class TurnoService implements IService<TurnoDto> {
-
 
     @Autowired
     ITurnoRepository repository;

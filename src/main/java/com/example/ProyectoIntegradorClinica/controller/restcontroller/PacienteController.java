@@ -5,6 +5,7 @@ import com.example.ProyectoIntegradorClinica.dto.PacienteDto;
 import com.example.ProyectoIntegradorClinica.exceptions.BadRequestException;
 import com.example.ProyectoIntegradorClinica.exceptions.ResourceNotFoundException;
 import com.example.ProyectoIntegradorClinica.service.imp.PacienteService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ public class PacienteController {
 
     private final Logger logger = Logger.getLogger(PacienteController.class);
 
+    @ApiOperation(value = "Obtener un paciente por su id")
     @GetMapping("/buscarId/{id}")
     public ResponseEntity<?> buscarPorId(@PathVariable("id") Integer id) throws ResourceNotFoundException {
 
@@ -36,18 +38,21 @@ public class PacienteController {
 
     }
 
+    @ApiOperation(value = "Obtener el listado de pacientes")
     @GetMapping("/todos")
     public ResponseEntity<List<PacienteDto>> consultarTodos() {
         logger.debug("Iniciando el método 'consultarTodos'");
         return ResponseEntity.ok(pacienteService.consultarTodos());
     }
 
+    @ApiOperation(value = "Crear un nuevo paciente")
     @PostMapping("/nuevo")
     public ResponseEntity<PacienteDto> crearNuevoPaciente(@RequestBody PacienteDto paciente){
         logger.debug("Iniciando el método 'crearNuevo (paciente)'");
         return ResponseEntity.ok(pacienteService.crear(paciente));
     }
 
+    @ApiOperation(value = "Actualizar un paciente")
     @PutMapping("/actualizar")
     public ResponseEntity<?> actualizarPaciente(@RequestBody PacienteDto paciente) throws ResourceNotFoundException, BadRequestException {
         logger.debug("Iniciando el método 'actualizar(paciente)'");
@@ -62,6 +67,7 @@ public class PacienteController {
         }
     }
 
+    @ApiOperation(value = "Eliminar un paciente por su id")
     @DeleteMapping("/eliminarId/{id}")
     public ResponseEntity<?> eliminarPorId(@PathVariable("id") Integer id) throws ResourceNotFoundException{
         logger.debug("Iniciando el método 'eliminarPorId'");

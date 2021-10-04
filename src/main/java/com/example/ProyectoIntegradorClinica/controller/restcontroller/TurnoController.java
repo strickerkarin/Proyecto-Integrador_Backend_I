@@ -4,6 +4,7 @@ import com.example.ProyectoIntegradorClinica.dto.TurnoDto;
 import com.example.ProyectoIntegradorClinica.exceptions.BadRequestException;
 import com.example.ProyectoIntegradorClinica.exceptions.ResourceNotFoundException;
 import com.example.ProyectoIntegradorClinica.service.imp.TurnoService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +24,14 @@ public class TurnoController {
     private final Logger logger = Logger.getLogger(PacienteController.class);
 
     @PreAuthorize("hasAuthority('ADMIN')")
+    @ApiOperation(value = "Obtener el listado de turnos")
     @GetMapping("/todos")
     public ResponseEntity<List<TurnoDto>> consultarTodos() {
         logger.debug("Iniciando el método 'consultarTodos'");
         return ResponseEntity.ok(turnoService.consultarTodos());
     }
 
+    @ApiOperation(value = "Obtener un turno por su id")
     @GetMapping("/buscarId/{id}")
     public ResponseEntity<?> buscarPorId(@PathVariable("id") Integer id) throws ResourceNotFoundException {
 
@@ -42,18 +45,21 @@ public class TurnoController {
         throw new ResourceNotFoundException("No se encontró el turno");
     }
 
+    @ApiOperation(value = "Obtener los turnos de la próxima semana a partir de hoy")
     @GetMapping("/proximaSemana")
     public ResponseEntity<List<TurnoDto>> consultarProximosTurnos() {
         logger.debug("Iniciando el método 'consultarProximosTurnos'");
         return ResponseEntity.ok(turnoService.consultarProximosTurnos());
     }
 
+    @ApiOperation(value = "Crear un nuevo turno")
     @PostMapping("/nuevo")
     public ResponseEntity<TurnoDto> crearNuevoTurno(@RequestBody TurnoDto turno){
         logger.debug("Iniciando el método 'crearNuevo (turno)'");
         return ResponseEntity.ok(turnoService.crear(turno));
     }
 
+    @ApiOperation(value = "Actualizar un turno")
     @PutMapping("/actualizar")
     public ResponseEntity<?> actualizarTurno(@RequestBody TurnoDto turno) throws BadRequestException, ResourceNotFoundException {
 
@@ -73,6 +79,7 @@ public class TurnoController {
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
+    @ApiOperation(value = "Eliminar un turno por su id")
     @DeleteMapping("/eliminarId/{id}")
     public ResponseEntity<String> eliminarPorId(@PathVariable("id") Integer id) throws ResourceNotFoundException {
 
